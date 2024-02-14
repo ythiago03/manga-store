@@ -2,14 +2,109 @@ nav{
   display: flex;
   flex-direction: column;
 }
-
+/* ===== Navbar top ===== */
 .navbar-top{
   width: 100%;
-  height: 6.5em;
+  height: 6.5rem;
   display: flex;
-  background-color: purple;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--black);
+  gap: 2rem;
 }
 
-.navbar-bottom{width: 100%;
-background-color: lightblue;
+.logo{
+  background-color: var(--purple);
+  width: 3rem;
+  height: 3rem;
+}
+
+.searchbar{
+  background-color: var(--white);
+  max-width: 600px;
+  width: 100%;
+  height: 3.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 50px;
+  padding: 2rem 2rem 2rem .0rem;
+  overflow: hidden;
+}
+
+.searchbar input{
+  width: 100%;
+  height: 64px;
+  background-color: transparent;
+  border: none;
+  padding-left: 1.5rem;
+  color: var(--purple);
+  font-size: 0.938rem;
+  outline: none;
+}
+
+.searchbar input::placeholder{
+  color: var(--purple);
+  font-size: 0.938rem;
+}
+
+.searchbar button{
+  width: 1.8rem;
+  height: 1.8rem;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.icons{
+  display: flex;
+  list-style-type: none;
+  gap: 3rem;
+}
+
+.icons li{
+  cursor: pointer;
+}
+
+.cart{
+  position: relative;
+}
+
+.cart span{
+  position: absolute;
+  top: 10px;
+  left: 17px;
+  right: 0;
+  bottom: 0;
+  color: var(--white);
+  font-weight: 700;
+  font-size: .7rem;
+}
+
+/* ===== Navbar bottom ===== */
+.navbar-bottom{
+  width: 100%;
+  height: 4.3rem;
+  background-color: var(--lightblue);
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.navigations{
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+}
+
+.navigations li{
+  display: flex;
+  align-items: center;
+}
+
+.navigations a{
+  text-decoration: none;
+  color: var(--black);
+  font-weight: 600;
 }
