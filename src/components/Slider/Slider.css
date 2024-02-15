@@ -1,11 +1,90 @@
 .slider-container{
-  width: 100%;
-  height: 25rem;
+  height: 30rem;
   padding: 3rem 5rem;
 }
 
 .slider-wrapper{
-  background-color: lightgray;
-  width: 100%;
-  height: 100%;
+  background: rgba(0, 0, 0, 0.539);
+  position: relative;
+  overflow: hidden;
+}
+
+.slider-bg-image{
+  position: absolute;
+  z-index: -1;
+  width: 110%;
+  top: -90px;
+  left: -90px;
+  filter: blur(10px);
+}
+
+.slider-focus-image{
+  position: absolute;
+  top: -50px;
+  right: 180px;
+  width: 25rem;
+  transform: rotate(10deg);
+}
+
+.slider-desc{
+  max-width: 60%;
+  padding: 4rem 3rem;
+  color: var(--white);
+}
+
+.slider-desc h1{
+  font-weight: 900;
+  margin-bottom: 1rem;
+}
+
+.slider-desc p{
+  line-height: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.slider-category{
+  display: flex;
+  list-style-type: none;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.slider-category li{
+  border: 1px solid var(--white);
+  padding: 4px 10px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+.btn-buy{
+  background-color: var(--purple);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.2rem;
+  padding: 7px 20px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+}
+
+.swiper-pagination{
+  position: absolute;
+  bottom: 10px;
+  right: 30px;
+  display: flex;
+  gap: 1rem;
+  z-index: 100;
+}
+
+.btn-control{
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.314);
+}
+
+.btn-control:hover{
+  background-color: var(--purple);
 }

@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom';
+
 import './Navbar.css';
 import searchIcon from '../../assets/icons/Search.svg';
 import cartIcon from '../../assets/icons/Cart.svg';
 import userIcon from '../../assets/icons/User.svg';
+
 
 const Navbar = () => {
   return (
@@ -33,16 +36,16 @@ const Navbar = () => {
       <div className="navbar-bottom">
         <ul className="navigations">
           <li>
-            <a href="/">Início</a>
+            <Link to="/">Início</Link>
           </li>
           <li >
-            <a href="/">Categorias</a>
+            <Link to="/category">Categorias</Link>
           </li>
           <li >
-            <a href="/">Contato</a>
+            <Link to="/">Contato</Link>
           </li>
           <li >
-            <a href="/">Perguntas Frequentes</a>
+            <Link to="/">Perguntas Frequentes</Link>
           </li>
         </ul>
       </div>
