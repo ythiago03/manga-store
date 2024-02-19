@@ -1,0 +1,35 @@
+.card{
+  width: 13.75rem;
+  height: 23.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card img{
+  width: 100%;
+}
+
+.card h2{
+  color: var(--black);
+  font-weight: 700;
+  padding-top: 0.5rem;
+}
+
+.prices{
+  display: flex;
+  gap: 1rem;
+  font-size: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+.prices span:first-child{
+  font-weight: 200;
+  text-decoration: line-through;
+}
+
+.prices span:last-child{
+  font-weight: 500;
+  color: var(--purple);
+}

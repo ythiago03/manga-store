@@ -11,7 +11,7 @@ const Slider = () => {
   const slides = [
     {
       productId: 1,
-      slideImg: 'https://www.actuabd.com/local/cache-vignettes/L700xH990/arton30196-5ca1d.jpg?1665394583',
+      slideImg: 'https://www.actuabd.com/local/cache-vignettes/L700xH988/arton31100-7c77a.png?1676370907',
       title: 'Solo Leveling',
       description: 'Sung Jin-Woo, um caçador E-rank. Alguém que tem que arriscar sua vida no mais baixo dos calabouços, o “mais fraco do mundo”. Não tendo nenhuma habilidade para mostrar, mal ganha o dinheiro necessário lutando em masmorras de baixo nível…',
       categories: ['Ação','Aventura','Fantasia','Shounen'],

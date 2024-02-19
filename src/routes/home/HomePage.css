@@ -1,0 +1,10 @@
+.brands{
+  display: flex;
+}
+
+.brands ul{
+  display: flex;
+  margin: auto;
+  place-items: center;
+  gap: 8rem;
+}

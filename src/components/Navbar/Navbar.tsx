@@ -12,7 +12,7 @@ const Navbar = () => {
       {/* Top */}
       <div className="navbar-top">
         <div className="logo">
-          <span>logo</span>
+          <span>Manga Store</span>
         </div>
 
         <div className="searchbar">
