@@ -9,6 +9,7 @@ type Props = {
 }
 
 const Card = (props: Props) => {
+  
   return (
     <div className="card">
       <img src={props.cardImg} alt="" />

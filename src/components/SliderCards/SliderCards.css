@@ -1,6 +1,10 @@
-.sliderc{
-  width: 100%;
-  padding: 1rem;
+.sliderCard-container{
+  padding-left: 7rem;
+  margin: 2rem;
   display: flex;
-  gap: 2rem;
+  height: 27rem;
+}
+
+.swiper-button-prev, .swiper-button-next{
+  color: var(--purple);
 }

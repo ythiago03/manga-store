@@ -1,40 +1,35 @@
-import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
 import './SliderCards.css';
 import Card from '../Card/Card';
 
-type Props = {}
+interface CardProp {
+  cardId: number,
+  cardTitle: string,
+  cardImg: string,
+  cardPrice: number,
+  cardOldPrice: number,
+}
 
-const SliderCards = (props: Props) => {
-  const cards = [
-    {
-      cardId: 1,
-      cardTitle: 'Jujutsu Kaisen',
-      cardImg: 'https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000,1000_QL80_.jpg',
-      cardPrice: 39.99,
-      cardOldPrice: 29.99,
-    },
-    {
-      cardId: 2,
-      cardTitle: 'Chainsaw Man',
-      cardImg: 'https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000,1000_QL80_.jpg',
-      cardPrice: 39.99,
-      cardOldPrice: 29.99,
-    },
-    {
-      cardId: 3,
-      cardTitle: 'Jujutsu Kaisen',
-      cardImg: 'https://m.media-amazon.com/images/I/81TmHlRleJL._AC_UF1000,1000_QL80_.jpg',
-      cardPrice: 39.99,
-      cardOldPrice: 29.99,
-    },
-  ];
-
-
+const SliderCards = ({cards}: {cards: CardProp[]}) => {
+  
   return (
-    <div className="sliderc">SliderCards
-      {cards.map((card) => <Card key={card.cardId} {...card}/>)}
-    </div>
+    <Swiper 
+      className="sliderCard-container"
+      slidesPerView={4}
+      navigation
+    >
+      {cards.map((card: CardProp) => {   
+        return (
+          <SwiperSlide key={card.cardId}>
+            <Card {...card}/>
+          </SwiperSlide>     
+        );
+      })}
+    </Swiper>
   );
 };
 
 export default SliderCards;
+

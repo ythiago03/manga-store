@@ -38,7 +38,7 @@ const Slider = () => {
       categories: ['Ação','Horror','Sobrenatural','Tragédia'],
     },
     {
-      productId: 4,
+      productId: 5,
       slideImg: 'https://m.media-amazon.com/images/I/71oZmNhST-L._AC_UF1000,1000_QL80_.jpg',
       title: 'Demon Slayer',
       description: 'Demon Slayer: Kimetsu no Yaiba is a Japanese fantasy manga series and comic book by Koyoharu Gotouge. It follows Tanjiro Kamado, a young boy living in Taisho-era Japan who becomes the sole survivor of his family after demons kill them. He then sets out to save his sist...',
