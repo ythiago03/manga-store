@@ -139,12 +139,12 @@ const HomePage = (props: Props) => {
           </li>
         </ul>
       </div>
-      <section className="releases">
-        <h1>Lançamentos</h1>
+      <section className="main-wrapper">
+        <h1 className="title">Lançamentos</h1>
         <SliderCards cards={releaseCards}/>
       </section>
-      <section className="releases">
-        <h1>Lançamentos</h1>
+      <section className="main-wrapper">
+        <h1 className="title">Mais Vendidos</h1>
         <SliderCards cards={bestSellersCards}/>
       </section>
     </main>

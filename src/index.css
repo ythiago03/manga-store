@@ -15,3 +15,53 @@
  --white: #ffffff;
  --lightblue: #BFCFE7;
 }
+
+.title{
+  color: var(--purple);
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--black);
+  transition: opacity 0.75s, visibility 0.75s;
+}
+
+
+.loading::after {
+  content: "";
+  width: 75px;
+  height: 75px;
+  border: 15px solid var(--white);
+  border-top-color: var(--purple);
+  border-radius: 50%;
+  animation: loading 0.75s ease infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+::-webkit-scrollbar{
+  background-color: var(--black);
+  width: .6rem;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--purple);
+  border-radius: 1rem;
+}
