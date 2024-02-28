@@ -9,11 +9,17 @@ type Props = {
 }
 
 const Card = (props: Props) => {
-  
+
   return (
     <div className="card">
       <img src={props.cardImg} alt="" />
-      <h2>{props.cardTitle}</h2>
+      <h2>
+        {
+          props.cardTitle.split('').length > 14 
+            ? props.cardTitle.slice(0, 13) + '...' 
+            : props.cardTitle
+        }
+      </h2>
       <div className="prices">
         <span>R${props.cardOldPrice}</span>
         <span>R${props.cardPrice}</span>

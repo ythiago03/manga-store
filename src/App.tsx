@@ -3,7 +3,7 @@ import { Suspense, lazy } from 'react';
 
 const HomePage = lazy(() => import('./routes/home/HomePage'));
 const Navbar = lazy(() => import('./components/Navbar/Navbar'));
-const Category = lazy(() => import('./routes/Category'));
+const Category = lazy(() => import('./routes/Categories/Category'));
 const Footer = lazy(() => import('./components/Footer/Footer'));
 
 function App() {
