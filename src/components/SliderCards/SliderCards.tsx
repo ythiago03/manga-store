@@ -5,11 +5,11 @@ import './SliderCards.css';
 import Card from '../Card/Card';
 
 interface CardProp {
-  cardId: number,
-  cardTitle: string,
-  cardImg: string,
-  cardPrice: number,
-  cardOldPrice: number,
+  id: number,
+  title: string,
+  coverImg: string,
+  price: number,
+  oldPrice: number,
 }
 
 const SliderCards = ({cards}: {cards: CardProp[]}) => {

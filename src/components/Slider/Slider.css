@@ -64,13 +64,13 @@
 
 .btn-buy{
   background-color: var(--purple);
-  color: var(--white);
   font-weight: 600;
   font-size: 1.2rem;
   padding: 7px 20px;
   border-radius: 50px;
   border: none;
   cursor: pointer;
+  color: var(--white);
 }
 
 .swiper-pagination{

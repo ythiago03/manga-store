@@ -1,29 +1,34 @@
 import React from 'react';
 import './Card.css';
+import { Link } from 'react-router-dom'; 
 
 type Props = {
-  cardTitle: string;
-  cardImg: string;
-  cardPrice: number;
-  cardOldPrice: number;
+  id: number;
+  title: string;
+  coverImg: string;
+  price: number;
+  oldPrice: number;
 }
 
 const Card = (props: Props) => {
 
+
   return (
-    <div className="card">
-      <img src={props.cardImg} alt="" />
-      <h2>
-        {
-          props.cardTitle.split('').length > 14 
-            ? props.cardTitle.slice(0, 13) + '...' 
-            : props.cardTitle
-        }
-      </h2>
-      <div className="prices">
-        <span>R${props.cardOldPrice}</span>
-        <span>R${props.cardPrice}</span>
-      </div>
+    <div>
+      <Link className="card" to={`/item/${props.id}`}>
+        <img src={props.coverImg} alt="" />
+        <h2>
+          {
+            props.title.split('').length > 14 
+              ? props.title.slice(0, 13) + '...' 
+              : props.title
+          }
+        </h2>
+        <div className="prices">
+          <span>R${props.oldPrice}</span>
+          <span>R${props.price}</span>
+        </div>
+      </Link>
     </div>
   );
 };

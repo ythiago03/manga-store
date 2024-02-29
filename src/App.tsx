@@ -1,5 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
+import Contact from './routes/Contact/Contact';
+import Questions from './routes/Questions/Questions';
+import ItemSelected from './routes/ItemSelected/ItemSelected';
 
 const HomePage = lazy(() => import('./routes/home/HomePage'));
 const Navbar = lazy(() => import('./components/Navbar/Navbar'));
@@ -18,10 +21,11 @@ function App() {
           <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/category" element={<Category/>}/>
-            {/* <Route path="/contact" element={<HomePage/>}/>
-          <Route path="/questions" element={<HomePage/>}/>
-          <Route path="/cart" element={<HomePage/>}/>
-          <Route path="/item:id" element={<HomePage/>}/> */}
+            <Route path="/contact" element={<Contact/>}/>
+            <Route path="/questions" element={<Questions/>}/>
+            <Route path="/item/:id" element={<ItemSelected/>}/>
+            {/* <Route path="/cart" element={<HomePage/>}/>
+           */}
           </Routes>
           <Footer/>
         </Suspense>

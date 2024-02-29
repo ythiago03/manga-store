@@ -42,10 +42,10 @@ const Navbar = () => {
             <Link to="/category">Categorias</Link>
           </li>
           <li >
-            <Link to="/">Contato</Link>
+            <Link to="/contact">Contato</Link>
           </li>
           <li >
-            <Link to="/">Perguntas Frequentes</Link>
+            <Link to="/questions">Perguntas Frequentes</Link>
           </li>
         </ul>
       </div>
