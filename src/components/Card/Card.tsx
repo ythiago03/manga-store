@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css';
 import { Link } from 'react-router-dom'; 
+import toReal from '../../utils/convertReal';
 
 type Props = {
   id: number;
@@ -25,8 +26,8 @@ const Card = (props: Props) => {
           }
         </h2>
         <div className="prices">
-          <span>R${props.oldPrice}</span>
-          <span>R${props.price}</span>
+          <span>{toReal(props.oldPrice)}</span>
+          <span>{toReal(props.price)}</span>
         </div>
       </Link>
     </div>

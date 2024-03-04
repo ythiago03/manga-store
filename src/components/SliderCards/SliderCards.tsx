@@ -22,7 +22,7 @@ const SliderCards = ({cards}: {cards: CardProp[]}) => {
     >
       {cards.map((card: CardProp) => {   
         return (
-          <SwiperSlide key={card.cardId}>
+          <SwiperSlide key={card.id}>
             <Card {...card}/>
           </SwiperSlide>     
         );
