@@ -1,0 +1,29 @@
+.contact-label{
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  gap: 1rem;
+  padding-top: 1rem;
+}
+
+.contact-label input{
+  padding: 1rem;
+  outline: none;
+  border: 1px solid var(--black);
+  border-radius: 1rem; 
+  font-size: 1rem;
+}
+
+.contact-label input::placeholder{
+  font-size: 1rem;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.contact-label input[type=number]{
+  -moz-appearance: textfield;
+}

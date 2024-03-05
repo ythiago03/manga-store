@@ -97,7 +97,7 @@ const ItemSelected = (props: Props) => {
         </section>
       </div>
 
-      <section className="releted">
+      <section className="related">
         <h1 className="title">Produtos Relacionados</h1>
         <SliderCards cards={relateds}/>
       </section>

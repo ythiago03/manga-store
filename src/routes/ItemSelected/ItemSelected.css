@@ -129,9 +129,12 @@
   font-size: 1.2rem;
 }
 
-
 .action-buttons{
   display: flex;
   justify-content: space-between;
 }
 
+.related{
+  padding: 1rem;
+  padding-top: 5rem;
+}
