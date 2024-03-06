@@ -37,6 +37,7 @@
   border: 1px solid var(--black);
   border-radius: 1rem; 
   font-size: 1rem;
+  resize: none;
 }
 
 .form-message textarea::placeholder{

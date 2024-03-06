@@ -1,0 +1,26 @@
+.question-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4rem 2rem
+}
+
+.question-wrapper ul{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 4rem;
+  padding: 4rem 1rem;
+}
+
+.question-title{
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.question-container ul li p{
+  max-width: 500px;
+  width: 100%;
+  margin-top: 1rem;
+}
+

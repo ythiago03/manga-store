@@ -27,9 +27,9 @@ const Navbar = () => {
             <img src={cartIcon} alt="Icone de Carrinho de Compras" />
             <span>01</span>
           </li>
-          <li>
+          {/* <li>
             <img src={userIcon} alt="Icone de Usuário" />
-          </li>
+          </li> */}
         </ul>
       </div>
       {/* Bottom */}
