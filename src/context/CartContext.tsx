@@ -8,10 +8,10 @@ interface CartContextProviderProps {
   children: ReactNode;
 }
 
-const CartContext = createContext<CartContextType | undefined>(undefined);
+export const CartContext = createContext<CartContextType | undefined>(undefined);
 
 export const CartContextProvider = ({children}: CartContextProviderProps) => {
-  const [cart, setCart] = useState<object[]>([{}]);
+  const [cart, setCart] = useState<object[]>([]);
 
   return (
     <CartContext.Provider value={{cart, setCart}}>

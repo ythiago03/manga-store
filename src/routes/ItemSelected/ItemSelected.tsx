@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import productsData from '../../data/products';
 
@@ -6,11 +6,14 @@ import './ItemSelected.css';
 import Magnifier from 'react-magnifier';
 import SliderCards from '../../components/SliderCards/SliderCards';
 import toReal from '../../utils/convertReal';
-
+import { CartContext } from '../../context/CartContext'; 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 type Props = {}
 
 const ItemSelected = (props: Props) => {
 
+  const {cart, setCart} = useContext(CartContext);
   const [amount, setAmount] = useState(0);
   
   const relateds = productsData.slice(0, 10);
@@ -40,11 +43,15 @@ const ItemSelected = (props: Props) => {
   const handleImgFocus = (newFocusedImg) => {
     setFocusedImg(newFocusedImg);
   };
-  console.log(amount);
+ 
+  const addToCart = () => {
+    setCart([...cart, card]);
+    toast.success('Produto Adicionado ao Carrinho!');
+  };
 
   return (
     <main className="itemSelected-container">
-
+      <ToastContainer />
       <div className="itemSelected-wrapper">
         <section className="item-photos-wrapper">
           <div className="focusedImg">
@@ -92,7 +99,7 @@ const ItemSelected = (props: Props) => {
           
           <div className="action-buttons">
             <button className="btn">Comprar</button>
-            <button className="btn">Colocar no Carrinho</button>
+            <button onClick={() => addToCart()}  className="btn">Colocar no Carrinho</button>
           </div>
         </section>
       </div>

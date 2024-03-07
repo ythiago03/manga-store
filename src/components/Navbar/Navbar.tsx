@@ -4,9 +4,13 @@ import './Navbar.css';
 import searchIcon from '../../assets/icons/Search.svg';
 import cartIcon from '../../assets/icons/Cart.svg';
 import userIcon from '../../assets/icons/User.svg';
+import { useContext } from 'react';
+import { CartContext } from '../../context/CartContext';
 
 
 const Navbar = () => {
+  const {cart} = useContext(CartContext);
+
   return (
     <nav>
       {/* Top */}
@@ -26,7 +30,7 @@ const Navbar = () => {
           <li className="cart">
             <Link to={'/cart'}>
               <img src={cartIcon} alt="Icone de Carrinho de Compras" />
-              <span>01</span>
+              <span>{cart.length}</span>
             </Link>
           </li>
           {/* <li>
