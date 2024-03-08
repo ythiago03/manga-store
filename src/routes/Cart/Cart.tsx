@@ -54,7 +54,7 @@ const Cart = (props: Props) => {
                             onClick={() => amount === 0 ? amount : setAmount(amount-1)}
                           >-
                           </button>
-                          <span>{amount}</span>
+                          <span>{cartItem.quantity}</span>
                           <button 
                             className="cart-total-btn"
                             onClick={() => setAmount(amount+1)}

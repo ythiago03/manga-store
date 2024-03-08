@@ -14,7 +14,7 @@ type Props = {}
 const ItemSelected = (props: Props) => {
 
   const {cart, setCart} = useContext(CartContext);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
   
   const relateds = productsData.slice(0, 10);
   const {id} =  useParams();
@@ -44,9 +44,22 @@ const ItemSelected = (props: Props) => {
     setFocusedImg(newFocusedImg);
   };
  
-  const addToCart = () => {
-    setCart([...cart, card]);
+  const test = () => {
+    setCart([...cart, {...card, quantity: amount}]);
     toast.success('Produto Adicionado ao Carrinho!');
+  };
+
+  const addToCart = () => {
+    cart.forEach((cartItem) => {
+      if(cartItem.id === card.id){
+        cartItem.quantity += amount; 
+        return;
+      }else{
+        test();
+      }
+    });
+    
+    
   };
 
   return (
@@ -82,9 +95,9 @@ const ItemSelected = (props: Props) => {
               <span>Item(s)</span>
               <div className="total-wrapper">
                 <button 
-                  style={{cursor: amount === 0 ? 'default' : 'pointer'}}
+                  style={{cursor: amount === 1 ? 'default' : 'pointer'}}
                   className="total-btn"
-                  onClick={() => amount === 0 ? amount : setAmount(amount-1)}
+                  onClick={() => amount === 1 ? amount : setAmount(amount-1)}
                 >-
                 </button>
                 <span>{amount}</span>

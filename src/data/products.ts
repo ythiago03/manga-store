@@ -108,3 +108,12 @@ const productsData: Product[] = [
 ];
 
 export default productsData;
+
+const test = {
+  coverImg: "https://m.media-amazon.com/images/I/81Z85oL1xvL._AC_UF1000,1000_QL80_.jpg",
+  id: 1,
+  oldPrice: 29.99,
+  price: 39.99,
+  title: "Blue Lock",
+  quantity: 0,
+}
