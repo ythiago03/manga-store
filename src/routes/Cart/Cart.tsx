@@ -8,14 +8,55 @@ type Props = {}
 
 const Cart = (props: Props) => {
   const {cart, setCart} = useContext(CartContext);
-  const [amount, setAmount] = useState(0);
+  const [amount, setAmount] = useState(1);
 
   const sumAllValues = () => {
-    let total = 0;
+    let subTotal = 0;
+    const duplicated = [];
     for(let i = 0; i < cart.length; i++){
-      total+=cart[i].price;
+      if(cart[i].quantity >=2){
+        duplicated.push(cart[i].price);  
+      }
+      subTotal+=cart[i].price;
     }
+    duplicated.push(subTotal);
+    const total = duplicated.reduce((acc, cur) => acc + cur, 0);
     return total;
+  };
+
+  const deleteItem = (cartItem) => {
+    const arrayDeleted = cart.filter((item) => item.id != cartItem.id );
+    setCart(arrayDeleted);
+    sumAllValues();
+  };
+
+  const incrementQuantity = (cartItem) => {
+    const arrayDeleted = cart.filter((item) => item.id != cartItem.id );
+    cart.forEach((item) => {
+      if(item.id === cartItem.id){
+        cartItem.quantity++;
+        arrayDeleted.push(cartItem);
+        arrayDeleted.reverse();
+      } 
+    });
+    setCart(arrayDeleted);
+    setAmount(amount + 1);
+    sumAllValues();
+  };
+
+
+  const decrementQuantity = (cartItem) => {
+    const arrayDeleted = cart.filter((item) => item.id != cartItem.id );
+    cart.forEach((item) => {
+      if(item.id === cartItem.id){
+        cartItem.quantity--;
+        arrayDeleted.push(cartItem);
+        arrayDeleted.reverse();
+      } 
+    });
+    setCart(arrayDeleted);
+    setAmount(amount - 1);
+    sumAllValues();
   };
 
   return (
@@ -49,15 +90,14 @@ const Cart = (props: Props) => {
                         <span>Item(s)</span>
                         <div className="cart-total-wrapper">
                           <button 
-                            style={{cursor: amount === 0 ? 'default' : 'pointer'}}
                             className="cart-total-btn"
-                            onClick={() => amount === 0 ? amount : setAmount(amount-1)}
+                            onClick={() => cartItem.quantity === 1 ? deleteItem(cartItem) : decrementQuantity(cartItem)}
                           >-
                           </button>
                           <span>{cartItem.quantity}</span>
                           <button 
                             className="cart-total-btn"
-                            onClick={() => setAmount(amount+1)}
+                            onClick={() => incrementQuantity(cartItem)}
                           >+
                           </button>
                         </div>

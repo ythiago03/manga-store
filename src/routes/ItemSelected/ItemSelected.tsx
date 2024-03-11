@@ -11,10 +11,11 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 type Props = {}
 
+
 const ItemSelected = (props: Props) => {
 
   const {cart, setCart} = useContext(CartContext);
-  const [amount, setAmount] = useState(1);
+  
   
   const relateds = productsData.slice(0, 10);
   const {id} =  useParams();
@@ -44,22 +45,11 @@ const ItemSelected = (props: Props) => {
     setFocusedImg(newFocusedImg);
   };
  
-  const test = () => {
-    setCart([...cart, {...card, quantity: amount}]);
-    toast.success('Produto Adicionado ao Carrinho!');
-  };
+
 
   const addToCart = () => {
-    cart.forEach((cartItem) => {
-      if(cartItem.id === card.id){
-        cartItem.quantity += amount; 
-        return;
-      }else{
-        test();
-      }
-    });
-    
-    
+    setCart([...cart, {...card, quantity: 1}]);
+    toast.success('Produto Adicionado ao Carrinho!');
   };
 
   return (
@@ -89,24 +79,6 @@ const ItemSelected = (props: Props) => {
             <div className="prices-wrapper">
               <span className="oldPrice">De:<span>{toReal(card.oldPrice)}</span></span>
               <span className="newPrice">Por:<span>{toReal(card.price)}</span></span>
-            </div>
-
-            <div className="totalItems">
-              <span>Item(s)</span>
-              <div className="total-wrapper">
-                <button 
-                  style={{cursor: amount === 1 ? 'default' : 'pointer'}}
-                  className="total-btn"
-                  onClick={() => amount === 1 ? amount : setAmount(amount-1)}
-                >-
-                </button>
-                <span>{amount}</span>
-                <button 
-                  className="total-btn"
-                  onClick={() => setAmount(amount+1)}
-                >+
-                </button>
-              </div>
             </div>
           </div>
           
