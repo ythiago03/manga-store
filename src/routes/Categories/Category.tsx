@@ -1,11 +1,7 @@
-import { useEffect } from 'react';
 import Card from '../../components/Card/Card';
-import './Category.css';
 
+//Data
 import productsData from '../../data/products';
-
-type Props = {}
-
 const categories = [
   'Ação',
   'Aventura',
@@ -20,18 +16,22 @@ const categories = [
   'Suspense',
 ];
 
-const Category = (props: Props) => {
+//Styles
+import './Category.css';
+
+const Category = () => {
 
   return (
     <main className="categories-container">
-      <div className="validar-semantica">
+      <aside>
         <div className="category-wrapper">
           <h1 className="title">Categorias</h1>
           <ul>
             {categories.map((category) => <li key={category}>{category}</li>)}
           </ul>
         </div>
-      </div>
+      </aside>
+      
       <section className="cards-wrapper">
         {productsData.map((card) => <Card key={card.id} {...card}/>)}
       </section>

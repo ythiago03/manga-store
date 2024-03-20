@@ -4,24 +4,19 @@ import './Cart.css';
 import dividerPrice from '../../utils/dividerPrice';
 import { CartContext } from '../../context/CartContext';
 import toReal from '../../utils/convertReal';
-type Props = {}
 
-const Cart = (props: Props) => {
+
+const Cart = () => {
   const {cart, setCart} = useContext(CartContext);
   const [amount, setAmount] = useState(1);
+  const [totalValue, setTotalValue] = useState(0);
+  const [itemsDuplicateds, setItemsDuplicateds] = useState([]);
 
   const sumAllValues = () => {
-    let subTotal = 0;
-    const duplicated = [];
-    for(let i = 0; i < cart.length; i++){
-      if(cart[i].quantity >=2){
-        duplicated.push(cart[i].price);  
-      }
-      subTotal+=cart[i].price;
-    }
-    duplicated.push(subTotal);
-    const total = duplicated.reduce((acc, cur) => acc + cur, 0);
-    return total;
+    cart.map((item) => {});
+    
+    return 10;
+    
   };
 
   const deleteItem = (cartItem) => {
@@ -106,7 +101,7 @@ const Cart = (props: Props) => {
                   </div>
           
                   <div className="cart-price">
-                    <span>{toReal(cartItem.price)}</span>
+                    <span>{toReal(cartItem.price*cartItem.quantity)}</span>
                   </div>
                 </div>
               );

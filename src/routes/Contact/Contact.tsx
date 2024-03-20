@@ -1,19 +1,19 @@
-import React from 'react';
-
-import './Contact.css';
 import InputForm from '../../components/InputForm/InputForm';
-type Props = {}
 
-const Contact = (props: Props) => {
+//Styles
+import './Contact.css';
+
+const Contact = () => {
   return (
     <main className="contact-container">
-      <section className="infos">
+      <section className="contact-info">
         <h1 className="title">Contato</h1>
         <p>Olá, agradecemos o contato, responderemos o mais rápido que pudermos!</p>
         <span>Telefone: (88) 88888-8888</span>
         <span>Whatsapp: (99) 99999-9999</span>
         <span>E-mail: mangastore@mail.com.br</span>
       </section>
+
       <section className="contact-form">
         <form>
           <InputForm label="Nome Completo" type="text" name="name" placeholder="Digite o seu nome"/>

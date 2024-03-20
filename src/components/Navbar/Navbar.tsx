@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
-
-import './Navbar.css';
-import searchIcon from '../../assets/icons/Search.svg';
-import cartIcon from '../../assets/icons/Cart.svg';
-import userIcon from '../../assets/icons/User.svg';
 import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 
+//Styles
+import './Navbar.css';
+
+//Icons
+import searchIcon from '../../assets/icons/Search.svg';
+import cartIcon from '../../assets/icons/Cart.svg';
 
 const Navbar = () => {
   const {cart} = useContext(CartContext);
@@ -14,7 +15,7 @@ const Navbar = () => {
   return (
     <nav>
       {/* Top */}
-      <div className="navbar-top">
+      <section className="navbar-top">
         <div className="logo">
           <span>Manga Store</span>
         </div>
@@ -22,7 +23,7 @@ const Navbar = () => {
         <div className="searchbar">
           <input type="text" placeholder="O que você está procurando?" />
           <button>
-            <img src={searchIcon} alt="Icone de Lupa" />
+            <img src={searchIcon} alt="Icone de Lupa de pesquisa" />
           </button>
         </div>
 
@@ -33,13 +34,11 @@ const Navbar = () => {
               <span>{cart.length}</span>
             </Link>
           </li>
-          {/* <li>
-            <img src={userIcon} alt="Icone de Usuário" />
-          </li> */}
         </ul>
-      </div>
+      </section>
+
       {/* Bottom */}
-      <div className="navbar-bottom">
+      <section className="navbar-bottom">
         <ul className="navigations">
           <li>
             <Link to="/">Início</Link>
@@ -54,7 +53,7 @@ const Navbar = () => {
             <Link to="/questions">Perguntas Frequentes</Link>
           </li>
         </ul>
-      </div>
+      </section>
     </nav>
   );
 };

@@ -4,13 +4,13 @@
   justify-content: space-between;
 }
 
-.infos{
+.contact-info{
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.infos{
+.contact-info{
   font-weight: 500;
 }
 

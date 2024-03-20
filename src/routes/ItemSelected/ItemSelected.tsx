@@ -1,25 +1,34 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import productsData from '../../data/products';
-
-import './ItemSelected.css';
+import { ToastContainer, toast } from 'react-toastify';
 import Magnifier from 'react-magnifier';
 import SliderCards from '../../components/SliderCards/SliderCards';
-import toReal from '../../utils/convertReal';
+
+//Data
+import productsData from '../../data/products';
 import { CartContext } from '../../context/CartContext'; 
-import { ToastContainer, toast } from 'react-toastify';
+
+//Utils
+import toReal from '../../utils/convertReal';
+
+//Styles
 import 'react-toastify/dist/ReactToastify.css';
-type Props = {}
+import './ItemSelected.css';
 
 
-const ItemSelected = (props: Props) => {
+interface CardInterface {
+  id: number,
+  title: string,
+  coverImg: string,
+  price: number,
+  oldPrice: number,
+}
 
-  const {cart, setCart} = useContext(CartContext);
-  
-  
-  const relateds = productsData.slice(0, 10);
+const ItemSelected = () => {
+
   const {id} =  useParams();
-  const [card, setCard] = useState({
+  const {cart, setCart} = useContext(CartContext);
+  const [card, setCard] = useState<CardInterface>({
     id: 0,
     title: '0',
     coverImg: '0',
@@ -27,6 +36,7 @@ const ItemSelected = (props: Props) => {
     oldPrice: 0,
   });
   const [focusedImg, setFocusedImg] = useState('');
+  const relateds = productsData.slice(0, 10);
 
   const fetchItem = async () => {
     const selectedItem = await productsData.filter(
@@ -41,12 +51,6 @@ const ItemSelected = (props: Props) => {
 
   useEffect(() => {fetchItem();},[id]);
 
-  const handleImgFocus = (newFocusedImg) => {
-    setFocusedImg(newFocusedImg);
-  };
- 
-
-
   const addToCart = () => {
     setCart([...cart, {...card, quantity: 1}]);
     toast.success('Produto Adicionado ao Carrinho!');
@@ -55,7 +59,8 @@ const ItemSelected = (props: Props) => {
   return (
     <main className="itemSelected-container">
       <ToastContainer />
-      <div className="itemSelected-wrapper">
+
+      <section className="itemSelected-wrapper">
         <section className="item-photos-wrapper">
           <div className="focusedImg">
             <Magnifier mgShape="square" src={focusedImg}/>
@@ -77,17 +82,26 @@ const ItemSelected = (props: Props) => {
           </p>
           <div className="prices-totalItems">
             <div className="prices-wrapper">
-              <span className="oldPrice">De:<span>{toReal(card.oldPrice)}</span></span>
-              <span className="newPrice">Por:<span>{toReal(card.price)}</span></span>
+              <span className="oldPrice">
+                De:<span>{toReal(card.oldPrice)}</span>
+              </span>
+              <span className="newPrice">
+                Por:<span>{toReal(card.price)}</span>
+              </span>
             </div>
           </div>
           
           <div className="action-buttons">
             <button className="btn">Comprar</button>
-            <button onClick={() => addToCart()}  className="btn">Colocar no Carrinho</button>
+            <button 
+              onClick={() => addToCart()}  
+              className="btn"
+            >
+              Colocar no Carrinho
+            </button>
           </div>
         </section>
-      </div>
+      </section>
 
       <section className="related">
         <h1 className="title">Produtos Relacionados</h1>

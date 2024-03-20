@@ -2,13 +2,13 @@ import { ReactNode, createContext, useState } from 'react';
 
 interface CartContextType {
   cart: object[];
-  setCart: React.Dispatch<React.SetStateAction<object>>;
+  setCart: React.Dispatch<React.SetStateAction<object[]>>;
 }
 interface CartContextProviderProps {
   children: ReactNode;
 }
 
-export const CartContext = createContext<CartContextType | undefined>(undefined);
+export const CartContext = createContext<CartContextType>();
 
 export const CartContextProvider = ({children}: CartContextProviderProps) => {
   const [cart, setCart] = useState<object[]>([]);

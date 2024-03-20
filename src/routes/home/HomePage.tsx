@@ -1,19 +1,21 @@
-import React from 'react';
 import Slider from '../../components/Slider/Slider';
+import SliderCards from '../../components/SliderCards/SliderCards';
+
+//Data
+import productsData from '../../data/products';
+
+//Styles
 import './HomePage.css';
 
+//Assets
 import jbc from '../../assets/brands/jbc.svg';
 import panini from '../../assets/brands/panini.svg';
 import newPop from '../../assets/brands/newpop.svg';
 import pipocaNanquim from '../../assets/brands/pipocaNanquim.svg';
 import viz from '../../assets/brands/viz.svg';
-import SliderCards from '../../components/SliderCards/SliderCards';
 
-import productsData from '../../data/products';
 
-type Props = {}
-
-const HomePage = (props: Props) => {
+const HomePage = () => {
   
   const bestSellersCards = productsData.slice(0,7);
   const releaseCards = productsData.slice(8,13);
@@ -21,6 +23,7 @@ const HomePage = (props: Props) => {
   return (
     <main>
       <Slider/>
+
       <div className="brands">
         <ul>
           <li>
@@ -40,14 +43,17 @@ const HomePage = (props: Props) => {
           </li>
         </ul>
       </div>
+
       <section className="main-wrapper">
         <h1 className="title">Lançamentos</h1>
         <SliderCards cards={releaseCards}/>
       </section>
+
       <section className="main-wrapper">
         <h1 className="title">Mais Vendidos</h1>
         <SliderCards cards={bestSellersCards}/>
       </section>
+      
     </main>
   );
 };

@@ -1,0 +1,10 @@
+.question-title{
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.question-answer{
+  max-width: 500px;
+  width: 100%;
+  margin-top: 1rem;
+}
