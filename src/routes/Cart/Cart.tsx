@@ -1,35 +1,51 @@
 import React, { useContext, useState } from 'react';
-import './Cart.css';
-
-import dividerPrice from '../../utils/dividerPrice';
 import { CartContext } from '../../context/CartContext';
+
+//Utils
 import toReal from '../../utils/convertReal';
 
+//Styles
+import './Cart.css';
+
+interface CartObject {
+  id: number;
+  title: string;
+  coverImg: string;
+  oldPrice: number;
+  price: number;
+  quantity?: number;
+}
 
 const Cart = () => {
   const {cart, setCart} = useContext(CartContext);
   const [amount, setAmount] = useState(1);
-  const [totalValue, setTotalValue] = useState(0);
-  const [itemsDuplicateds, setItemsDuplicateds] = useState([]);
+
 
   const sumAllValues = () => {
-    cart.map((item) => {});
+    const subtotal: number[] = [];
+    cart.forEach((item) => {
+      if(item.quantity > 1){
+        subtotal.push(item.price * item.quantity);
+      }else{
+        subtotal.push(item.price);
+      }  
+    });
     
-    return 10;
-    
+    const total = subtotal.reduce((acc, cur) => acc + cur, 0);
+    return total;
   };
 
-  const deleteItem = (cartItem) => {
+  const deleteItem = (cartItem: CartObject) => {
     const arrayDeleted = cart.filter((item) => item.id != cartItem.id );
     setCart(arrayDeleted);
     sumAllValues();
   };
 
-  const incrementQuantity = (cartItem) => {
+  const incrementQuantity = (cartItem: CartObject) => {
     const arrayDeleted = cart.filter((item) => item.id != cartItem.id );
     cart.forEach((item) => {
       if(item.id === cartItem.id){
-        cartItem.quantity++;
+        cartItem.quantity && cartItem.quantity++;
         arrayDeleted.push(cartItem);
         arrayDeleted.reverse();
       } 
@@ -40,11 +56,11 @@ const Cart = () => {
   };
 
 
-  const decrementQuantity = (cartItem) => {
+  const decrementQuantity = (cartItem: CartObject) => {
     const arrayDeleted = cart.filter((item) => item.id != cartItem.id );
     cart.forEach((item) => {
       if(item.id === cartItem.id){
-        cartItem.quantity--;
+        cartItem.quantity && cartItem.quantity--;
         arrayDeleted.push(cartItem);
         arrayDeleted.reverse();
       } 
@@ -52,6 +68,20 @@ const Cart = () => {
     setCart(arrayDeleted);
     setAmount(amount - 1);
     sumAllValues();
+  };
+
+  const getCartQuantity = () => {
+    const subtotal = [];
+    cart.forEach((item) => {
+      if(item.quantity > 1){
+        subtotal.push(item.quantity);
+      }else{
+        subtotal.push(1);
+      }  
+    });
+    
+    const total = subtotal.reduce((acc, cur) => acc + cur, 0);
+    return total;
   };
 
   return (
@@ -62,7 +92,7 @@ const Cart = () => {
           <span>Selecionar todos os items</span>
         </div>
         <div className="cart-total-wraper">
-          <span className="subtotal-title">Subtotal({cart.length} produtos):</span>
+          <span className="subtotal-title">Subtotal({getCartQuantity()} produtos):</span>
           <span className="subtotal">{toReal(sumAllValues())}</span>
           <button className="subtotal-buy">Comprar</button>
         </div>
@@ -101,7 +131,9 @@ const Cart = () => {
                   </div>
           
                   <div className="cart-price">
-                    <span>{toReal(cartItem.price*cartItem.quantity)}</span>
+                    <span>
+                      {toReal(cartItem.price*(cartItem.quantity ? cartItem.quantity : 1))}
+                    </span>
                   </div>
                 </div>
               );
