@@ -13,9 +13,7 @@ import reclameaqui from '../../assets/stamps/reclameaqui.svg';
 import ssl from '../../assets/stamps/ssl.svg';
 import vtex from '../../assets/stamps/vtex.svg';
 
-type Props = {}
-
-const Footer = (props: Props) => {
+const Footer = () => {
   return (
     <footer className="footer-container">
       <section className="footer-wrapper-top">

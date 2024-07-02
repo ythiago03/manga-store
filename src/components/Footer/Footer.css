@@ -4,8 +4,10 @@
 
 .footer-wrapper-top{
   background-color: var(--purple);
-  height: 6.4rem;
+  min-height: 6.4rem;
   display: flex;
+  flex-wrap: wrap;
+  padding: 0.5rem;
   justify-content: center;
   align-items: center;
   color: var(--white);
@@ -16,10 +18,12 @@
   font-weight: 500;
   font-size: 2rem;
   text-transform: uppercase;
+  text-align: center;
 }
 
 .footer-wrapper-top p {
   max-width: 30rem;
+  text-align: center;
 }
 
 .footer-wrapper-top p span{
@@ -28,10 +32,12 @@
 
 .footer-wrapper-bottom{
   background-color: var(--black);
-  height: 100%;
   display: flex;
+  min-height: 100%;
+  flex-wrap: wrap;
+  gap: 1.5rem;
   justify-content: space-around;
-  padding-top: 3rem;
+  padding: 1.5rem;
 }
 
 .footer-title{
@@ -72,4 +78,10 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+}
+
+@media screen and (max-width:1014px) {
+  .footer-wrapper-top > span{
+    display: none;
+  }
 }
