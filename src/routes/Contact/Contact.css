@@ -1,7 +1,9 @@
 .contact-container{
   padding: 2rem;
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-evenly;
 }
 
 .contact-info{
@@ -15,7 +17,7 @@
 }
 
 .contact-form{
-  width: 50%;
+  min-width: 50%;
 }
 
 .contact-form form{
