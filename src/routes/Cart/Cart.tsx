@@ -106,7 +106,6 @@ const Cart = () => {
               return (
                 <div key={cartItem.id} className="cart-item">
                   <div className="cart-item-wrapper">
-                    <input type="checkbox" name="" id="" />
                     <img src={cartItem.coverImg} alt="" />
             
                     <div className="cart-item-desc">

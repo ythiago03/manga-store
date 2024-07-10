@@ -1,14 +1,15 @@
 .cart-container{
-  padding: 4rem;
+  padding: 1.5rem;
 }
 
 .cart-wrapper{
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
 .cart-title-wrapper{
-  width: 50%;
   margin: 1rem 0;
 }
 
@@ -63,6 +64,7 @@
   display: flex;
   gap: 1rem;
   padding: 1rem;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -72,6 +74,8 @@
 
 .cart-item-wrapper{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 1rem;
 }
 
@@ -135,3 +139,19 @@
   font-weight: 600;
   font-size: 1.4rem;
 }
+
+@media screen and (max-width: 735px) {
+  .cart-wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .cart-price{
+    margin: 0 auto;
+  }
+}
+
+
