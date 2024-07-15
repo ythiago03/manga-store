@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 //Styles
@@ -11,11 +11,21 @@ import cartIcon from '../../assets/icons/Cart.svg';
 
 const Navbar = () => {
   const {cart} = useContext(CartContext);
+  const [isMenuOpened, setIsMenuOpened] = useState<boolean>(false);
+  const toggleCheckbox = () => {
+    setIsMenuOpened(!isMenuOpened);
+  };
 
   return (
     <nav>
       {/* Top */}
       <section className="navbar-top">
+        <input onClick={() => toggleCheckbox()} type="checkbox" id="checkbox" />
+        <label htmlFor="checkbox" className="toggle">
+          <div className="bars" id="bar1"></div>
+          <div className="bars" id="bar2"></div>
+          <div className="bars" id="bar3"></div>
+        </label>
         <div className="logo">
           <span>Manga Store</span>
         </div>
@@ -38,7 +48,7 @@ const Navbar = () => {
       </section>
 
       {/* Bottom */}
-      <section className="navbar-bottom">
+      <section  className={'navbar-bottom ' + (isMenuOpened ? 'navbar-show' : '')}>
         <ul className="navigations">
           <li>
             <Link to="/">Início</Link>
