@@ -12,7 +12,7 @@ const Slider = () => {
   const slides = [
     {
       productId: 10,
-      slideImg: 'https://www.actuabd.com/local/cache-vignettes/L700xH988/arton31100-7c77a.png?1676370907',
+      slideImg: 'https://www.taiyo.moe/_next/image?url=https%3A%2F%2Fcdn.taiyo.moe%2Fmedias%2F17b03940-450b-4b34-a904-e9b296daee9a%2Fcovers%2F4ce8e97f-a130-4e06-8651-958f9d15d832.jpg&w=640&q=75',
       title: 'Solo Leveling',
       description: 'Sung Jin-Woo, um caçador E-rank. Alguém que tem que arriscar sua vida no mais baixo dos calabouços, o “mais fraco do mundo”. Não tendo nenhuma habilidade para mostrar, mal ganha o dinheiro necessário lutando em masmorras de baixo nível…',
       categories: ['Ação','Aventura','Fantasia','Shounen'],
@@ -26,7 +26,7 @@ const Slider = () => {
     },
     {
       productId: 12,
-      slideImg: 'https://lojamonstra.com.br/loja/wp-content/uploads/2021/08/berserk-9.jpg',
+      slideImg: 'https://images.penguinrandomhouse.com/cover/9781593074845',
       title: 'Berserk',
       description: 'Guts, um ex-mercenário agora conhecido como o “Espadachim Negro”, está em busca de vingança. Depois de uma infância tumultuada, ele finalmente encontra alguém que respeita e acredita que pode confiar, apenas para ver tudo desmoronar quando essa pessoa tira tudo que é imp...',
       categories: ['Ação','Horror','Sobrenatural','Tragédia'],
@@ -52,7 +52,6 @@ const Slider = () => {
       
       <Swiper
         slidesPerView={1}
-        pagination={{clickable: true}}
         autoplay={{pauseOnMouseEnter: true}}   
       >
         {slides.map((slide) => 

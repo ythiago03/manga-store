@@ -73,7 +73,7 @@ const productsData: Product[] = [
   {
     id: 10,
     title: 'Solo Leveling',
-    coverImg: 'https://www.actuabd.com/local/cache-vignettes/L700xH988/arton31100-7c77a.png?1676370907',
+    coverImg: 'https://www.taiyo.moe/_next/image?url=https%3A%2F%2Fcdn.taiyo.moe%2Fmedias%2F17b03940-450b-4b34-a904-e9b296daee9a%2Fcovers%2F4ce8e97f-a130-4e06-8651-958f9d15d832.jpg&w=640&q=75',
     oldPrice: 40.99,
     price: 38.99,
   },
@@ -87,7 +87,7 @@ const productsData: Product[] = [
   {
     id: 12,
     title: 'Berserk',
-    coverImg: 'https://lojamonstra.com.br/loja/wp-content/uploads/2021/08/berserk-9.jpg',
+    coverImg: 'https://images.penguinrandomhouse.com/cover/9781593074845',
     oldPrice: 37.99,
     price: 30.99,
   },
@@ -108,12 +108,3 @@ const productsData: Product[] = [
 ];
 
 export default productsData;
-
-const test = {
-  coverImg: "https://m.media-amazon.com/images/I/81Z85oL1xvL._AC_UF1000,1000_QL80_.jpg",
-  id: 1,
-  price: 29.99,
-  oldPrice: 39.99,
-  title: "Blue Lock",
-  quantity: 0,
-}
