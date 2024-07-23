@@ -138,3 +138,28 @@
   padding: 1rem;
   padding-top: 5rem;
 }
+
+@media screen and (max-width: 750px) {
+  .itemSelected-wrapper{
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1rem;
+  }
+
+  .item-photos-wrapper{
+    padding: 0rem;
+    width: 80%;
+  }
+
+  .item-desc-wrapper{
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0;
+    padding-right: 0;
+  }
+
+  .action-buttons{
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+}
