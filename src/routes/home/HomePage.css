@@ -5,6 +5,9 @@
 .brands ul{
   display: flex;
   margin: auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 1rem;
   place-items: center;
   gap: 8rem;
 }
