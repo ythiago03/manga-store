@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { CartContext } from '../../context/CartContext';
 
 //Utils
@@ -24,11 +24,13 @@ const Cart = () => {
   const sumAllValues = () => {
     const subtotal: number[] = [];
     cart.forEach((item) => {
-      if(item.quantity > 1){
-        subtotal.push(item.price * item.quantity);
-      }else{
-        subtotal.push(item.price);
-      }  
+      if(item.quantity){
+        if(item.quantity > 1){
+          subtotal.push(item.price * item.quantity);
+        }else{
+          subtotal.push(item.price);
+        }  
+      }
     });
     
     const total = subtotal.reduce((acc, cur) => acc + cur, 0);
@@ -71,15 +73,16 @@ const Cart = () => {
   };
 
   const getCartQuantity = () => {
-    const subtotal = [];
+    const subtotal: number[] = [];
     cart.forEach((item) => {
-      if(item.quantity > 1){
-        subtotal.push(item.quantity);
-      }else{
-        subtotal.push(1);
-      }  
+      if(item.quantity){
+        if(item.quantity > 1){
+          subtotal.push(item.quantity);
+        }else{
+          subtotal.push(1);
+        }  
+      }
     });
-    
     const total = subtotal.reduce((acc, cur) => acc + cur, 0);
     return total;
   };

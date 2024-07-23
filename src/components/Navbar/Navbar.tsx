@@ -41,7 +41,7 @@ const Navbar = () => {
           <li className="cart">
             <Link to={'/cart'}>
               <img src={cartIcon} alt="Icone de Carrinho de Compras" />
-              <span>{cart.length}</span>
+              <span>{cart?.length}</span>
             </Link>
           </li>
         </ul>

@@ -1,4 +1,3 @@
-import React from 'react';
 import './Footer.css';
 
 import pix from '../../assets/paymentsMethods/pix.svg';

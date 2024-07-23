@@ -10,14 +10,14 @@ interface CartObject {
 }
 
 interface CartContextType {
-  cart: CartObject[];
-  setCart: React.Dispatch<React.SetStateAction<object[]>>;
+  cart?: CartObject[];
+  setCart?: React.Dispatch<React.SetStateAction<CartObject[]>>;
 }
 interface CartContextProviderProps {
   children: ReactNode;
 }
 
-export const CartContext = createContext<CartContextType>();
+export const CartContext = createContext<CartContextType>({});
 
 export const CartContextProvider = ({children}: CartContextProviderProps) => {
   const [cart, setCart] = useState<CartObject[]>([]);
