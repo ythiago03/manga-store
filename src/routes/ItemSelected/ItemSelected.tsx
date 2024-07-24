@@ -35,8 +35,6 @@ const ItemSelected = () => {
     oldPrice: 0,
   });
   const [focusedImg, setFocusedImg] = useState('');
-  console.log(focusedImg);
-  
   const relateds = productsData.slice(0, 10);
 
   const fetchItem = async () => {
@@ -67,7 +65,11 @@ const ItemSelected = () => {
       <section className="itemSelected-wrapper">
         <section className="item-photos-wrapper">
           <div className="focusedImg">
-          
+            <img
+              alt="Manga photo"
+              src={focusedImg}
+              width="300"
+            />
           </div>
           <ul className="min-imgs-container">
             <li className="minImg-wrapper">
