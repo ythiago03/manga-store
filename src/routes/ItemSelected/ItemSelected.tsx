@@ -52,7 +52,10 @@ const ItemSelected = () => {
   useEffect(() => {fetchItem();},[id]);
 
   const addToCart = () => {
-    setCart([...cart, {...card, quantity: 1}]);
+    if(cart){
+      setCart([...cart, {...card, quantity: 1}]);
+    }
+    
     toast.success('Produto Adicionado ao Carrinho!');
   };
 
@@ -63,6 +66,7 @@ const ItemSelected = () => {
       <section className="itemSelected-wrapper">
         <section className="item-photos-wrapper">
           <div className="focusedImg">
+            {/* @ts-expect-error Server Component */} 
             <Magnifier mgShape="square" src={focusedImg}/>
           </div>
           <ul className="min-imgs-container">
