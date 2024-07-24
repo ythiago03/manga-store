@@ -3,7 +3,7 @@ type Props = {
   divider: number;
 };
 
-const dividerPrice = (totalPrice, divider): number => {
+const dividerPrice = ({totalPrice, divider}: Props): string => {
   const newValue = (totalPrice/divider).toFixed(2);
   
   return newValue;
