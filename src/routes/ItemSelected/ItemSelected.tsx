@@ -1,7 +1,6 @@
 import { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import Magnifier from 'react-magnifier';
 import SliderCards from '../../components/SliderCards/SliderCards';
 
 //Data
@@ -36,6 +35,8 @@ const ItemSelected = () => {
     oldPrice: 0,
   });
   const [focusedImg, setFocusedImg] = useState('');
+  console.log(focusedImg);
+  
   const relateds = productsData.slice(0, 10);
 
   const fetchItem = async () => {
@@ -66,8 +67,7 @@ const ItemSelected = () => {
       <section className="itemSelected-wrapper">
         <section className="item-photos-wrapper">
           <div className="focusedImg">
-            {/* @ts-expect-error Server Component */} 
-            <Magnifier mgShape="square" src={focusedImg}/>
+          
           </div>
           <ul className="min-imgs-container">
             <li className="minImg-wrapper">
