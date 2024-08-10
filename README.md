@@ -10,9 +10,9 @@
     <a href="#autor">autor</a> 
 </p>
 
-<h4 align="center">🚧  This project is under construction . . .  🚧 </h4>
+<!--<h4 align="center">🚧  This project is under construction . . .  🚧 </h4>-->
 
-<!--<p align="center">Você pode checar o projeto<a href=""> clicando aqui.</a></p>-->
+<p align="center">Você pode checar o projeto<a href="https://manga-store-ythiago03.vercel.app/"> clicando aqui.</a></p>
 
 # Sobre
 <!--
