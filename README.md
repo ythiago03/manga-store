@@ -1,4 +1,4 @@
-<h1 align="center"> MangáStore </h1>
+<h1 align="center"> MangaStore </h1>
 
 <p align="center"> E-Commerce de mangás. </p>
 
